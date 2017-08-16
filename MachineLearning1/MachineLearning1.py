@@ -5,10 +5,10 @@ import pandas as pd
 import csv
 import math
 #fruit prediction
-features = [[140,1], [130,1], [150,1], [170,0]]
-labels = [0,0,1,1]
-clf = tree.DecisionTreeClassifier()
-clf = clf.fit(features,labels)
+#features = [[140,1], [130,1], [150,1], [170,0]]
+#labels = [0,0,1,1]
+#clf = tree.DecisionTreeClassifier()
+#clf = clf.fit(features,labels)
 #print (clf.predict([[135,0]]))
 
 
