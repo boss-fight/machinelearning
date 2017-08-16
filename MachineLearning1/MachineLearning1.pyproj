@@ -25,6 +25,7 @@
     <Compile Include="MachineLearning1.py" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="NE2016.csv" />
     <Content Include="teamDefense.csv" />
     <Content Include="teamOffense.csv" />
   </ItemGroup>
