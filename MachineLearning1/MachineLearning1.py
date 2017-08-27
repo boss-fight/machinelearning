@@ -97,70 +97,73 @@ gameHeaders = ["team score", "opp score", "O1stD", "OTotYd", "OPassY", "ORushY",
 
 #team arrays
 
-#1
+#0
 #arizona = []
-#2
+#1
 #atlanta = []
-#3
+#2
 #baltimore = []
-#4
+#3
 #buffalo = []
-#5
+#4
 #carolina = []
-#6
+#5
 #chicago = []
-#7
+#6
 #cincinnati = []
-#8
+#7
 #cleveland = []
-#9
+#8
 #dallas = []
-#10
+#9
 #denver = []
-#11
+#10
 #detroit = []
-#12
+#11
 #greenbay = []
-#13
+#12
 #houston = []
-#14
+#13
 #indianapolis = []
-#15
+#14
 #jacksonville = []
-#16
+#15
 #kansascity = []
-#17
+#16
 #losangeles = []
-#18
+#17
 #miami = []
-#19
+#18
 #minnesota = []
-#20
+#19
 #newengland = []
-#21
+#20
 #neworleans = []
-#22
+#21
 #newyorkg = []
-#23
+#22
 #newyorkj = []
-#24
+#23
 #oakland = []
-#25
+#24
 #philadelphia = []
-#26
+#25
 #pittsburgh = []
-#27
+#26
 #sandiego = []
-#28
+#27
 #sanfran = []
-#29
+#28
 #seattle = []
-#30
+#29
 #tampabay = []
-#31
+#30
 #tennessee = []
-#32
+#31
 #washington = []
+
+
+
 
 #2015 stats
 arizona2015stats = []
@@ -197,7 +200,7 @@ tennessee2015stats = []
 washington2015stats = []
 #2015 scores
 arizona2015scores = []
-atlantas2015scores = []
+atlanta2015scores = []
 baltimore2015scores = []
 buffalo2015scores = []
 carolina2015scores = []
@@ -239,11 +242,102 @@ teams2015 = [arizona2015stats,atlanta2015stats,baltimore2015stats,buffalo2015sta
          seattle2015stats,tampabay2015stats,tennessee2015stats,washington2015stats]
 
 
-scores2015 = [arizona2015scores ,atlantas2015scores,baltimore2015scores,buffalo2015scores,carolina2015scores,chicago2015scores,cincinnati2015scores,cleveland2015scores,dallas2015scores,denver2015scores,
+scores2015 = [arizona2015scores ,atlanta2015scores,baltimore2015scores,buffalo2015scores,carolina2015scores,chicago2015scores,cincinnati2015scores,cleveland2015scores,dallas2015scores,denver2015scores,
               detroit2015scores,greenbay2015scores,houston2015scores,indianapolis2015scores,jacksonville2015scores,kansascity2015scores,losangeles2015scores,miami2015scores,minnesota2015scores,
               newengland2015scores,neworleans2015scores,newyorkg2015scores,newyorkj2015scores,oakland2015scores,philadelphia2015scores,pittsburgh2015scores,sandiego2015scores,sanfran2015scores,
               seattle2015scores,tampabay2015scores,tennessee2015scores,washington2015scores]
 
+#2016 data
+#2016 stats
+arizona2016stats = []
+atlanta2016stats = []
+baltimore2016stats = []
+buffalo2016stats = []
+carolina2016stats = []
+chicago2016stats = []
+cincinnati2016stats = []
+cleveland2016stats = []
+dallas2016stats = []
+denver2016stats = []
+detroit2016stats = []
+greenbay2016stats = []
+houston2016stats = []
+indianapolis2016stats = []
+jacksonville2016stats = []
+kansascity2016stats = []
+losangeles2016stats = []
+miami2016stats = []
+minnesota2016stats = []
+newengland2016stats = []
+neworleans2016stats = []
+newyorkg2016stats = []
+newyorkj2016stats = []
+oakland2016stats = []
+philadelphia2016stats = []
+pittsburgh2016stats = []
+sandiego2016stats = []
+sanfran2016stats = []
+seattle2016stats = []
+tampabay2016stats = []
+tennessee2016stats = []
+washington2016stats = []
+#2016 scores
+arizona2016scores = []
+atlanta2016scores = []
+baltimore2016scores = []
+buffalo2016scores = []
+carolina2016scores = []
+chicago2016scores = []
+cincinnati2016scores = []
+cleveland2016scores = []
+dallas2016scores = []
+denver2016scores = []
+detroit2016scores = []
+greenbay2016scores = []
+houston2016scores = []
+indianapolis2016scores = []
+jacksonville2016scores = []
+kansascity2016scores = []
+losangeles2016scores = []
+miami2016scores = []
+minnesota2016scores = []
+newengland2016scores = []
+neworleans2016scores = []
+newyorkg2016scores = []
+newyorkj2016scores = []
+oakland2016scores = []
+philadelphia2016scores = []
+pittsburgh2016scores = []
+sandiego2016scores = []
+sanfran2016scores = []
+seattle2016scores = []
+tampabay2016scores = []
+tennessee2016scores = []
+washington2016scores = []
+
+
+
+directory2016 = './footballdata/2016/*.txt'
+
+teams2016 = [arizona2016stats,atlanta2016stats,baltimore2016stats,buffalo2016stats,carolina2016stats,chicago2016stats,cincinnati2016stats,cleveland2016stats,dallas2016stats,denver2016stats,
+             detroit2016stats,greenbay2016stats,houston2016stats,indianapolis2016stats,jacksonville2016stats,kansascity2016stats,losangeles2016stats,miami2016stats,minnesota2016stats,
+             newengland2016stats,neworleans2016stats,newyorkg2016stats,newyorkj2016stats,oakland2016stats,philadelphia2016stats,pittsburgh2016stats,sandiego2016stats,sanfran2016stats,
+         seattle2016stats,tampabay2016stats,tennessee2016stats,washington2016stats]
+
+
+scores2016 = [arizona2016scores ,atlanta2016scores,baltimore2016scores,buffalo2016scores,carolina2016scores,chicago2016scores,cincinnati2016scores,cleveland2016scores,dallas2016scores,denver2016scores,
+              detroit2016scores,greenbay2016scores,houston2016scores,indianapolis2016scores,jacksonville2016scores,kansascity2016scores,losangeles2016scores,miami2016scores,minnesota2016scores,
+              newengland2016scores,neworleans2016scores,newyorkg2016scores,newyorkj2016scores,oakland2016scores,philadelphia2016scores,pittsburgh2016scores,sandiego2016scores,sanfran2016scores,
+              seattle2016scores,tampabay2016scores,tennessee2016scores,washington2016scores]
+
+
+
+
+
+
+
+
+#pull data from stats folder
 def getData(directory,teams,scores):
     i = 0
     for file in glob.iglob(directory):
@@ -266,11 +360,13 @@ def getData(directory,teams,scores):
                 seasonscores.append(row[10])
         teams[i].append(season)
         scores[i].append(seasonscores)
-        print("team 2015")
+        print("team stats")
         print(teams[i])
-        print("scores 2015")
+        print("scores")
         print(scores[i])
         print(i)
         i += 1
 
 getData(directory2015,teams2015, scores2015)
+
+getData(directory2016,teams2016, scores2016)
