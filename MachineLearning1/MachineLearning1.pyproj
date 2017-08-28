@@ -26,10 +26,43 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="footballdata\" />
+    <Folder Include="footballdata\2014\" />
     <Folder Include="footballdata\2015\" />
     <Folder Include="footballdata\2016\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="footballdata\2014\arizona2014.txt" />
+    <Content Include="footballdata\2014\atlanta2014.txt" />
+    <Content Include="footballdata\2014\baltimore2014.txt" />
+    <Content Include="footballdata\2014\buffalo2014.txt" />
+    <Content Include="footballdata\2014\carolina2014.txt" />
+    <Content Include="footballdata\2014\chicago2014.txt" />
+    <Content Include="footballdata\2014\cincinnati2014.txt" />
+    <Content Include="footballdata\2014\cleveland2014.txt" />
+    <Content Include="footballdata\2014\dallas2014.txt" />
+    <Content Include="footballdata\2014\denver2014.txt" />
+    <Content Include="footballdata\2014\detroit2014.txt" />
+    <Content Include="footballdata\2014\greenbay2014.txt" />
+    <Content Include="footballdata\2014\houston2014.txt" />
+    <Content Include="footballdata\2014\indianapolis2014.txt" />
+    <Content Include="footballdata\2014\jacksonville2014.txt" />
+    <Content Include="footballdata\2014\kansascity2014.txt" />
+    <Content Include="footballdata\2014\losangeles2014.txt" />
+    <Content Include="footballdata\2014\miami2014.txt" />
+    <Content Include="footballdata\2014\minnesota2014.txt" />
+    <Content Include="footballdata\2014\newengland2014.txt" />
+    <Content Include="footballdata\2014\neworleans2014.txt" />
+    <Content Include="footballdata\2014\newyorkg2014.txt" />
+    <Content Include="footballdata\2014\newyorkj2014.txt" />
+    <Content Include="footballdata\2014\oakland2014.txt" />
+    <Content Include="footballdata\2014\philadelphia2014.txt" />
+    <Content Include="footballdata\2014\pittsburgh2014.txt" />
+    <Content Include="footballdata\2014\sandiego2014.txt" />
+    <Content Include="footballdata\2014\sanfran2014.txt" />
+    <Content Include="footballdata\2014\seattle2014.txt" />
+    <Content Include="footballdata\2014\tampabay2014.txt" />
+    <Content Include="footballdata\2014\tennessee2014.txt" />
+    <Content Include="footballdata\2014\washington2014.txt" />
     <Content Include="footballdata\2015\arizona2015.txt" />
     <Content Include="footballdata\2015\atlanta2015.txt" />
     <Content Include="footballdata\2015\baltimore2015.txt" />

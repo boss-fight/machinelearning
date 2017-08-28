@@ -4,7 +4,6 @@ import numpy as np
 import pandas as pd
 import csv
 import math
-import os
 import glob
 
 
@@ -15,36 +14,9 @@ pd.set_option('display.max_rows',500)
 pd.set_option('display.max_columns', 50)
 pd.set_option('display.width', 1000)
 
-#totalOffense = pd.read_csv("teamOffense.csv")
-#print(totalOffense)
-#print(totalOffense.iloc[0])
-
-
 gameHeaders = ["team score", "opp score", "O1stD", "OTotYd", "OPassY", "ORushY", "TO",
               "D1stD", "DTotYd", "DPassY", "DRushY", "DTO","Expected Offense Points",
               "Expected Defense Points", "Expected Special Points"]
-
-
-
-
-#pull data out and seperate into scores and
-#for index, row in pats2016.iterrows():
-#    game = []
-
-#    for x in range(12,17):
-#        if math.isnan(row[x]):
-#            game.append(0)
-#        else:
-#            game.append(row[x])
-
-#    if game[0]==0 and game[1] == 0:
-#        print('bye week game')
-#    else:
-#        newengland.append(game)
-#        scores.append(row[10])
-
- 
-
 
 #Create Support Vector Regressions
 #SVR is to predict next value in a series
@@ -162,7 +134,87 @@ gameHeaders = ["team score", "opp score", "O1stD", "OTotYd", "OPassY", "ORushY",
 #31
 #washington = []
 
+#2014 stats
+arizona2014stats = []
+atlanta2014stats = []
+baltimore2014stats = []
+buffalo2014stats = []
+carolina2014stats = []
+chicago2014stats = []
+cincinnati2014stats = []
+cleveland2014stats = []
+dallas2014stats = []
+denver2014stats = []
+detroit2014stats = []
+greenbay2014stats = []
+houston2014stats = []
+indianapolis2014stats = []
+jacksonville2014stats = []
+kansascity2014stats = []
+losangeles2014stats = []
+miami2014stats = []
+minnesota2014stats = []
+newengland2014stats = []
+neworleans2014stats = []
+newyorkg2014stats = []
+newyorkj2014stats = []
+oakland2014stats = []
+philadelphia2014stats = []
+pittsburgh2014stats = []
+sandiego2014stats = []
+sanfran2014stats = []
+seattle2014stats = []
+tampabay2014stats = []
+tennessee2014stats = []
+washington2014stats = []
+#2014 scores
+arizona2014scores = []
+atlanta2014scores = []
+baltimore2014scores = []
+buffalo2014scores = []
+carolina2014scores = []
+chicago2014scores = []
+cincinnati2014scores = []
+cleveland2014scores = []
+dallas2014scores = []
+denver2014scores = []
+detroit2014scores = []
+greenbay2014scores = []
+houston2014scores = []
+indianapolis2014scores = []
+jacksonville2014scores = []
+kansascity2014scores = []
+losangeles2014scores = []
+miami2014scores = []
+minnesota2014scores = []
+newengland2014scores = []
+neworleans2014scores = []
+newyorkg2014scores = []
+newyorkj2014scores = []
+oakland2014scores = []
+philadelphia2014scores = []
+pittsburgh2014scores = []
+sandiego2014scores = []
+sanfran2014scores = []
+seattle2014scores = []
+tampabay2014scores = []
+tennessee2014scores = []
+washington2014scores = []
 
+
+
+directory2014 = './footballdata/2014/*.txt'
+
+teams2014 = [arizona2014stats,atlanta2014stats,baltimore2014stats,buffalo2014stats,carolina2014stats,chicago2014stats,cincinnati2014stats,cleveland2014stats,dallas2014stats,denver2014stats,
+             detroit2014stats,greenbay2014stats,houston2014stats,indianapolis2014stats,jacksonville2014stats,kansascity2014stats,losangeles2014stats,miami2014stats,minnesota2014stats,
+             newengland2014stats,neworleans2014stats,newyorkg2014stats,newyorkj2014stats,oakland2014stats,philadelphia2014stats,pittsburgh2014stats,sandiego2014stats,sanfran2014stats,
+         seattle2014stats,tampabay2014stats,tennessee2014stats,washington2014stats]
+
+
+scores2014 = [arizona2014scores ,atlanta2014scores,baltimore2014scores,buffalo2014scores,carolina2014scores,chicago2014scores,cincinnati2014scores,cleveland2014scores,dallas2014scores,denver2014scores,
+              detroit2014scores,greenbay2014scores,houston2014scores,indianapolis2014scores,jacksonville2014scores,kansascity2014scores,losangeles2014scores,miami2014scores,minnesota2014scores,
+              newengland2014scores,neworleans2014scores,newyorkg2014scores,newyorkj2014scores,oakland2014scores,philadelphia2014scores,pittsburgh2014scores,sandiego2014scores,sanfran2014scores,
+              seattle2014scores,tampabay2014scores,tennessee2014scores,washington2014scores]
 
 
 #2015 stats
@@ -337,11 +389,10 @@ scores2016 = [arizona2016scores ,atlanta2016scores,baltimore2016scores,buffalo20
 
 
 
-#pull data from stats folder
+#pull data from stats folder method
 def getData(directory,teams,scores):
     i = 0
     for file in glob.iglob(directory):
-        print(file)
         seasonfile = pd.read_csv(file)
         season = []
         seasonscores = []
@@ -366,6 +417,13 @@ def getData(directory,teams,scores):
         print(scores[i])
         print(i)
         i += 1
+
+
+#def trainData(teamStats1,teamStats2,teamScores1,teamScores2)
+    
+
+
+getData(directory2014,teams2014,scores2014)
 
 getData(directory2015,teams2015, scores2015)
 
