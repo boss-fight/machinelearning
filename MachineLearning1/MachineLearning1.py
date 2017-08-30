@@ -20,7 +20,8 @@ pd.set_option('display.width', 1000)
 #print(totalOffense.iloc[0])
 
 
-gameHeaders = ["team score", "opp score", "O1stD", "OTotYd", "OPassY", "ORushY", "TO",
+gameHeaders = ["week", "day", "date", "empty1", "empty 2", "empty 3", "OT", "rec", "empty 4",
+              "team score", "opp score", "O1stD", "OTotYd", "OPassY", "ORushY", "TO",
               "D1stD", "DTotYd", "DPassY", "DRushY", "DTO","Expected Offense Points",
               "Expected Defense Points", "Expected Special Points"]
 
@@ -43,7 +44,7 @@ gameHeaders = ["team score", "opp score", "O1stD", "OTotYd", "OPassY", "ORushY",
 #        newengland.append(game)
 #        scores.append(row[10])
 
- 
+
 
 
 #Create Support Vector Regressions
@@ -257,8 +258,8 @@ def getData(directory,teams,scores):
                 if math.isnan(row[x]):
                     game.append(0)
                 else:
-                    game.append(row[x]) 
-        
+                    game.append(row[x])
+
             if game[0]==0 and game[1] == 0:
                 print('bye week game')
             else:
