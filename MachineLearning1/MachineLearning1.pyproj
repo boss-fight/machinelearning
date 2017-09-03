@@ -127,6 +127,7 @@
     <Content Include="footballdata\2016\tampabay2016.txt" />
     <Content Include="footballdata\2016\tennessee2016.txt" />
     <Content Include="footballdata\2016\washington2016.txt" />
+    <Content Include="footballdata\unscaled2016predictions.txt" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

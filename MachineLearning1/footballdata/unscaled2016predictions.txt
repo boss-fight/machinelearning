@@ -1,0 +1,64 @@
+predicted score
+[ 24.63970295]
+actual score
+23.0
+predicted score
+[ 38.38982388]
+actual score
+31.0
+predicted score
+[ 20.46973636]
+actual score
+27.0
+predicted score
+[ 19.27914965]
+actual score
+0.0
+predicted score
+[ 43.09776076]
+actual score
+33.0
+predicted score
+[ 37.22741382]
+actual score
+35.0
+predicted score
+[ 24.04564249]
+actual score
+27.0
+predicted score
+[ 29.90999038]
+actual score
+41.0
+predicted score
+[ 26.05918085]
+actual score
+24.0
+predicted score
+[ 38.01178023]
+actual score
+30.0
+predicted score
+[ 32.34831957]
+actual score
+22.0
+predicted score
+[ 33.15994559]
+actual score
+26.0
+predicted score
+[ 30.29323433]
+actual score
+30.0
+predicted score
+[ 26.49480246]
+actual score
+16.0
+predicted score
+[ 27.3267625]
+actual score
+41.0
+predicted score
+[ 32.84212172]
+actual score
+35.0

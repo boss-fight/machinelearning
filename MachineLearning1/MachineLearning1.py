@@ -1,5 +1,6 @@
 from sklearn import tree
 from sklearn.svm import SVR
+from sklearn import preprocessing
 import numpy as np
 import pandas as pd
 import csv
@@ -382,13 +383,6 @@ scores2016 = [arizona2016scores ,atlanta2016scores,baltimore2016scores,buffalo20
               newengland2016scores,neworleans2016scores,newyorkg2016scores,newyorkj2016scores,oakland2016scores,philadelphia2016scores,pittsburgh2016scores,sandiego2016scores,sanfran2016scores,
               seattle2016scores,tampabay2016scores,tennessee2016scores,washington2016scores]
 
-
-
-
-
-
-
-
 #pull data from stats folder method
 def getData(directory,teams,scores):
     i = 0
@@ -405,26 +399,106 @@ def getData(directory,teams,scores):
                     game.append(row[x]) 
         
             if game[0]==0 and game[1] == 0:
-                print('bye week game')
+                b = 0
             else:
                 season.append(game)
                 seasonscores.append(row[10])
         teams[i].append(season)
         scores[i].append(seasonscores)
-        print("team stats")
-        print(teams[i])
-        print("scores")
-        print(scores[i])
-        print(i)
         i += 1
 
-
-#def trainData(teamStats1,teamStats2,teamScores1,teamScores2)
+#train N games
+def trainData(teamStats, teamScores, numberOfGames, svr):
+    #create range of games you want based off number of games
+    range1 = len(teamStats[0])+len(teamStats[1])-numberOfGames
+    range2 = len(teamStats[0])+len(teamStats[1])
+    newTeamStats = []
+    for season in teamStats:
+        for game in season:
+            newTeamStats.append(game)
     
+    newerTeamStats = []
+    for game in newTeamStats[range1:range2]:
+        newerTeamStats.append(game)
+
+    newTeamScores = []
+    for season in teamScores:
+        for game in season:
+            newTeamScores.append(game)
+    
+    newerTeamScores = []
+    for game in newTeamScores[range1:range2]:
+        newerTeamScores.append(game)
+
+    svr.fit(newerTeamStats,newerTeamScores)
+
+def season_walkthrough(teamStats,teamScores, teamStats2016, teamScores2016, svr):
+    #original trainData from above method minus range parameter
+    newTeamStats = []
+    for season in teamStats:
+        for game in season:
+            newTeamStats.append(game)
+    
+    newerTeamStats = []
+    for game in newTeamStats:
+        newerTeamStats.append(game)
+
+    newTeamScores = []
+    for season in teamScores:
+        for game in season:
+            newTeamScores.append(game)
+    
+    newerTeamScores = []
+    for game in newTeamScores:
+        newerTeamScores.append(game)
+
+    #first fit
+    
+    svr.fit(newerTeamStats,newerTeamScores)
 
 
-getData(directory2014,teams2014,scores2014)
+    #pull out 2016 stats/scores
+    newTeamStats2016 = []
+    newTeamScores2016 = []
+    for season in teamStats2016:
+        for game in season:
+            newTeamStats2016.append(game)
 
+    for season in teamScores2016:
+        for game in season:
+            newTeamScores2016.append(game)
+
+    #iterate through 2016 and print predictions
+    while (len(newTeamStats2016)>0):
+        game = newTeamStats2016.pop(0)
+        score = newTeamScores2016.pop(0)
+        
+        #add data to old before reshape
+        newerTeamStats.append(game)
+        newerTeamScores.append(score)
+        
+        #predict
+        game = np.reshape(game,(1,-1))
+        print("predicted score")
+        print(svr.predict(game))
+        print("actual score")
+        print(score)
+
+        #refit model with new data
+        svr.fit(newerTeamStats, newerTeamScores)
+
+
+
+#create team arrays    
+getData(directory2014,teams2014, scores2014)
 getData(directory2015,teams2015, scores2015)
-
 getData(directory2016,teams2016, scores2016)
+
+#combine seasons
+newenglandTrainStats = newengland2014stats + newengland2015stats
+newenglandTrainScores = newengland2014scores + newengland2015scores
+
+#SVR
+svr_lin = SVR(kernel='linear', C=1e3)
+
+season_walkthrough(newenglandTrainStats,newenglandTrainScores,newengland2016stats,newengland2016scores,svr_lin)
