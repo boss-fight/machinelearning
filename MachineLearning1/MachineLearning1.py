@@ -393,11 +393,12 @@ def getData(directory,teams,scores):
         for index, row in seasonfile.iterrows():
             game = []
             for x in range(12,17):
+                if x == 13:
+                    continue
                 if math.isnan(row[x]):
                     game.append(0)
                 else:
                     game.append(row[x]) 
-        
             if game[0]==0 and game[1] == 0:
                 b = 0
             else:
@@ -453,7 +454,6 @@ def season_walkthrough(teamStats,teamScores, teamStats2016, teamScores2016, svr)
         newerTeamScores.append(game)
 
     #first fit
-    
     svr.fit(newerTeamStats,newerTeamScores)
 
 
@@ -483,11 +483,7 @@ def season_walkthrough(teamStats,teamScores, teamStats2016, teamScores2016, svr)
         print(svr.predict(game))
         print("actual score")
         print(score)
-
-        #refit model with new data
-        svr.fit(newerTeamStats, newerTeamScores)
-
-
+        svr.fit(newerTeamStats,newerTeamScores)
 
 #create team arrays    
 getData(directory2014,teams2014, scores2014)
@@ -498,7 +494,9 @@ getData(directory2016,teams2016, scores2016)
 newenglandTrainStats = newengland2014stats + newengland2015stats
 newenglandTrainScores = newengland2014scores + newengland2015scores
 
+arizonaTrainStats = arizona2014stats + arizona2015stats
+arizonaTrainScores = arizona2014scores + arizona2015scores
+
 #SVR
 svr_lin = SVR(kernel='linear', C=1e3)
-
 season_walkthrough(newenglandTrainStats,newenglandTrainScores,newengland2016stats,newengland2016scores,svr_lin)
