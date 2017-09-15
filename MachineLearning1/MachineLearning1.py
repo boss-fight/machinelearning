@@ -135,6 +135,176 @@ gameHeaders = ["team score", "opp score", "O1stD", "OTotYd", "OPassY", "ORushY",
 #31
 #washington = []
 
+#2012 stats
+arizona2012stats = []
+atlanta2012stats = []
+baltimore2012stats = []
+buffalo2012stats = []
+carolina2012stats = []
+chicago2012stats = []
+cincinnati2012stats = []
+cleveland2012stats = []
+dallas2012stats = []
+denver2012stats = []
+detroit2012stats = []
+greenbay2012stats = []
+houston2012stats = []
+indianapolis2012stats = []
+jacksonville2012stats = []
+kansascity2012stats = []
+losangeles2012stats = []
+miami2012stats = []
+minnesota2012stats = []
+newengland2012stats = []
+neworleans2012stats = []
+newyorkg2012stats = []
+newyorkj2012stats = []
+oakland2012stats = []
+philadelphia2012stats = []
+pittsburgh2012stats = []
+sandiego2012stats = []
+sanfran2012stats = []
+seattle2012stats = []
+tampabay2012stats = []
+tennessee2012stats = []
+washington2012stats = []
+#2012 scores
+arizona2012scores = []
+atlanta2012scores = []
+baltimore2012scores = []
+buffalo2012scores = []
+carolina2012scores = []
+chicago2012scores = []
+cincinnati2012scores = []
+cleveland2012scores = []
+dallas2012scores = []
+denver2012scores = []
+detroit2012scores = []
+greenbay2012scores = []
+houston2012scores = []
+indianapolis2012scores = []
+jacksonville2012scores = []
+kansascity2012scores = []
+losangeles2012scores = []
+miami2012scores = []
+minnesota2012scores = []
+newengland2012scores = []
+neworleans2012scores = []
+newyorkg2012scores = []
+newyorkj2012scores = []
+oakland2012scores = []
+philadelphia2012scores = []
+pittsburgh2012scores = []
+sandiego2012scores = []
+sanfran2012scores = []
+seattle2012scores = []
+tampabay2012scores = []
+tennessee2012scores = []
+washington2012scores = []
+
+
+
+directory2012 = './footballdata/2012/*.txt'
+
+teams2012 = [arizona2012stats,atlanta2012stats,baltimore2012stats,buffalo2012stats,carolina2012stats,chicago2012stats,cincinnati2012stats,cleveland2012stats,dallas2012stats,denver2012stats,
+             detroit2012stats,greenbay2012stats,houston2012stats,indianapolis2012stats,jacksonville2012stats,kansascity2012stats,losangeles2012stats,miami2012stats,minnesota2012stats,
+             newengland2012stats,neworleans2012stats,newyorkg2012stats,newyorkj2012stats,oakland2012stats,philadelphia2012stats,pittsburgh2012stats,sandiego2012stats,sanfran2012stats,
+         seattle2012stats,tampabay2012stats,tennessee2012stats,washington2012stats]
+
+
+scores2012 = [arizona2012scores ,atlanta2012scores,baltimore2012scores,buffalo2012scores,carolina2012scores,chicago2012scores,cincinnati2012scores,cleveland2012scores,dallas2012scores,denver2012scores,
+              detroit2012scores,greenbay2012scores,houston2012scores,indianapolis2012scores,jacksonville2012scores,kansascity2012scores,losangeles2012scores,miami2012scores,minnesota2012scores,
+              newengland2012scores,neworleans2012scores,newyorkg2012scores,newyorkj2012scores,oakland2012scores,philadelphia2012scores,pittsburgh2012scores,sandiego2012scores,sanfran2012scores,
+              seattle2012scores,tampabay2012scores,tennessee2012scores,washington2012scores]
+
+
+
+
+
+
+
+#2013 stats
+arizona2013stats = []
+atlanta2013stats = []
+baltimore2013stats = []
+buffalo2013stats = []
+carolina2013stats = []
+chicago2013stats = []
+cincinnati2013stats = []
+cleveland2013stats = []
+dallas2013stats = []
+denver2013stats = []
+detroit2013stats = []
+greenbay2013stats = []
+houston2013stats = []
+indianapolis2013stats = []
+jacksonville2013stats = []
+kansascity2013stats = []
+losangeles2013stats = []
+miami2013stats = []
+minnesota2013stats = []
+newengland2013stats = []
+neworleans2013stats = []
+newyorkg2013stats = []
+newyorkj2013stats = []
+oakland2013stats = []
+philadelphia2013stats = []
+pittsburgh2013stats = []
+sandiego2013stats = []
+sanfran2013stats = []
+seattle2013stats = []
+tampabay2013stats = []
+tennessee2013stats = []
+washington2013stats = []
+#2013 scores
+arizona2013scores = []
+atlanta2013scores = []
+baltimore2013scores = []
+buffalo2013scores = []
+carolina2013scores = []
+chicago2013scores = []
+cincinnati2013scores = []
+cleveland2013scores = []
+dallas2013scores = []
+denver2013scores = []
+detroit2013scores = []
+greenbay2013scores = []
+houston2013scores = []
+indianapolis2013scores = []
+jacksonville2013scores = []
+kansascity2013scores = []
+losangeles2013scores = []
+miami2013scores = []
+minnesota2013scores = []
+newengland2013scores = []
+neworleans2013scores = []
+newyorkg2013scores = []
+newyorkj2013scores = []
+oakland2013scores = []
+philadelphia2013scores = []
+pittsburgh2013scores = []
+sandiego2013scores = []
+sanfran2013scores = []
+seattle2013scores = []
+tampabay2013scores = []
+tennessee2013scores = []
+washington2013scores = []
+
+
+
+directory2013 = './footballdata/2013/*.txt'
+
+teams2013 = [arizona2013stats,atlanta2013stats,baltimore2013stats,buffalo2013stats,carolina2013stats,chicago2013stats,cincinnati2013stats,cleveland2013stats,dallas2013stats,denver2013stats,
+             detroit2013stats,greenbay2013stats,houston2013stats,indianapolis2013stats,jacksonville2013stats,kansascity2013stats,losangeles2013stats,miami2013stats,minnesota2013stats,
+             newengland2013stats,neworleans2013stats,newyorkg2013stats,newyorkj2013stats,oakland2013stats,philadelphia2013stats,pittsburgh2013stats,sandiego2013stats,sanfran2013stats,
+         seattle2013stats,tampabay2013stats,tennessee2013stats,washington2013stats]
+
+
+scores2013 = [arizona2013scores ,atlanta2013scores,baltimore2013scores,buffalo2013scores,carolina2013scores,chicago2013scores,cincinnati2013scores,cleveland2013scores,dallas2013scores,denver2013scores,
+              detroit2013scores,greenbay2013scores,houston2013scores,indianapolis2013scores,jacksonville2013scores,kansascity2013scores,losangeles2013scores,miami2013scores,minnesota2013scores,
+              newengland2013scores,neworleans2013scores,newyorkg2013scores,newyorkj2013scores,oakland2013scores,philadelphia2013scores,pittsburgh2013scores,sandiego2013scores,sanfran2013scores,
+              seattle2013scores,tampabay2013scores,tennessee2013scores,washington2013scores]
+
 #2014 stats
 arizona2014stats = []
 atlanta2014stats = []
@@ -383,6 +553,48 @@ scores2016 = [arizona2016scores ,atlanta2016scores,baltimore2016scores,buffalo20
               newengland2016scores,neworleans2016scores,newyorkg2016scores,newyorkj2016scores,oakland2016scores,philadelphia2016scores,pittsburgh2016scores,sandiego2016scores,sanfran2016scores,
               seattle2016scores,tampabay2016scores,tennessee2016scores,washington2016scores]
 
+
+
+#team averages
+arizonaAverage = []
+atlantaAverage = []
+baltimoreAverage = []
+buffaloAverage = []
+carolinaAverage = []
+chicagoAverage = []
+cincinnatiAverage = []
+clevelandAverage = []
+dallasAverage = []
+denverAverage = []
+detroitAverage = []
+greenbayAverage = []
+houstonAverage = []
+indianapolisAverage = []
+jacksonvilleAverage = []
+kansascityAverage = []
+losangelesAverage = []
+miamiAverage = []
+minnesotaAverage = []
+newenglandAverage = []
+neworleansAverage = []
+newyorkgAverage = []
+newyorkjAverage = []
+oaklandAverage = []
+philadelphiaAverage = []
+pittsburghAverage = []
+sandiegoAverage = []
+sanfranAverage = []
+seattleAverage = []
+tampabayAverage = []
+tennesseeAverage = []
+washingtonAverage = []
+
+
+teamsAverages = [arizonaAverage,atlantaAverage,baltimoreAverage,buffaloAverage,carolinaAverage,chicagoAverage,cincinnatiAverage,clevelandAverage,dallasAverage,denverAverage,
+             detroitAverage,greenbayAverage,houstonAverage,indianapolisAverage,jacksonvilleAverage,kansascityAverage,losangelesAverage,miamiAverage,minnesotaAverage,
+             newenglandAverage,neworleansAverage,newyorkgAverage,newyorkjAverage,oaklandAverage,philadelphiaAverage,pittsburghAverage,sandiegoAverage,sanfranAverage,
+         seattleAverage,tampabayAverage,tennesseeAverage,washingtonAverage]
+
 #pull data from stats folder method
 def getData(directory,teams,scores):
     i = 0
@@ -408,6 +620,9 @@ def getData(directory,teams,scores):
         scores[i].append(seasonscores)
         i += 1
 
+
+
+
 #train N games
 def trainData(teamStats, teamScores, numberOfGames, svr):
     #create range of games you want based off number of games
@@ -432,6 +647,22 @@ def trainData(teamStats, teamScores, numberOfGames, svr):
         newerTeamScores.append(game)
 
     svr.fit(newerTeamStats,newerTeamScores)
+
+
+def create_average_data(teamStats,teamAverageStats):
+    tempAverage = []
+    for season in teamStats:
+        for game in season:
+            tempAverage.append(game)
+            a = np.array(tempAverage)
+            a = a.mean(axis=0)
+            x = list(a)
+            #rounding not sure if we need to
+            x = [round(float(i),2) for i in x]
+            teamAverageStats.append(x)
+
+
+
 
 def season_walkthrough(teamStats,teamScores, teamStats2016, teamScores2016, svr):
     #original trainData from above method minus range parameter
@@ -485,18 +716,26 @@ def season_walkthrough(teamStats,teamScores, teamStats2016, teamScores2016, svr)
         print(score)
         svr.fit(newerTeamStats,newerTeamScores)
 
+
+
+##MAIN##
+
 #create team arrays    
+
+getData(directory2012,teams2012, scores2012)
+getData(directory2013,teams2013, scores2013)
 getData(directory2014,teams2014, scores2014)
 getData(directory2015,teams2015, scores2015)
 getData(directory2016,teams2016, scores2016)
 
-#combine seasons
-newenglandTrainStats = newengland2014stats + newengland2015stats
-newenglandTrainScores = newengland2014scores + newengland2015scores
 
-arizonaTrainStats = arizona2014stats + arizona2015stats
-arizonaTrainScores = arizona2014scores + arizona2015scores
+
+#combine seasons
+newenglandTrainStats = newengland2012stats + newengland2013stats
+newenglandTrainScores = newengland2012scores + newengland2013scores
+
+create_average_data(newenglandTrainStats,newenglandAverage)
 
 #SVR
-svr_lin = SVR(kernel='linear', C=1e3)
-season_walkthrough(newenglandTrainStats,newenglandTrainScores,newengland2016stats,newengland2016scores,svr_lin)
+#svr_lin = SVR(kernel='linear', C=1e3)
+#season_walkthrough(newenglandTrainStats,newenglandTrainScores,newengland2016stats,newengland2016scores,svr_lin)
