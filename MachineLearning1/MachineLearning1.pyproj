@@ -22,6 +22,9 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="footballdata.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="MachineLearning1.py" />
   </ItemGroup>
   <ItemGroup>
