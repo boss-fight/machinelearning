@@ -70,8 +70,27 @@ def train_average_points(teamstats,teamscores):
     print("yikes")
 
 
-def train_average_offense(team1stats,team2stats):
-    print("yikes")
+def grab_average_offense(averageTeamStats):
+    team1AverageOffense = []
+    for game in averageTeamStats:
+        newgame = []
+        for x in range(0,4):
+            newgame.append(game[x])
+        print("new offense game")
+        print(newgame)
+        team1AverageOffense.append(newgame)
+    return team1AverageOffense
+
+def grab_average_defense(averageTeamStats):
+    team2AverageDefense = []
+    for game in averageTeamStats:
+        newgame = []
+        for x in range(4,8):
+            newgame.append(game[x])
+        print("new defense game")
+        print(newgame)
+        team2AverageDefense.append(newgame)
+    return team2AverageDefense
 
 
 def train_average_defense(teamstats,teamscores):
@@ -526,7 +545,6 @@ footballdata.getData(directory2014,teams2014, scores2014)
 footballdata.getData(directory2015,teams2015, scores2015)
 footballdata.getData(directory2016,teams2016, scores2016)
 
-
 #average seasons
 arizonaAverageStats = arizona2012stats + arizona2013stats + arizona2014stats + arizona2015stats
 arizonaAverageScores = arizona2012scores+ arizona2013scores + arizona2014scores + arizona2015scores
@@ -690,8 +708,10 @@ washingtonAverageScores = footballdata.flatten_array(washingtonAverageScores)
 
 ##MAIN##
 
-print("average NE scores")
-print(newenglandAverageScores)
+#print("average newengland stats")
+#print(newenglandAverage)
+#print("average NE scores")
+#print(newenglandAverageScores)
 
 #SVR
 #svr = SVR(kernel='linear', C=1e3)
@@ -700,3 +720,12 @@ print(newenglandAverageScores)
 #a = np.reshape(newengland2016stats[0][0],(1,-1))
 #print(newengland2016scores[0])
 #print(svr.predict(a))
+
+#train_average_offense(newenglandAverage,arizonaAverage)
+print("new england 2016 stats")
+print(newengland2016stats)
+
+print("average newengland stats")
+print(newenglandAverage)
+print("average NE scores")
+print(newenglandAverageScores)
