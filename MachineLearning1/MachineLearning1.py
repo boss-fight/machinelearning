@@ -73,27 +73,54 @@ def train_average_points(teamstats,teamscores):
 def grab_average_offense(averageTeamStats):
     team1AverageOffense = []
     for game in averageTeamStats:
-        newgame = []
-        for x in range(0,4):
-            newgame.append(game[x])
-        print("new offense game")
-        print(newgame)
-        team1AverageOffense.append(newgame)
+        team1AverageOffense.append(game[0:4])
     return team1AverageOffense
+
+def grab_average_offense_game(averageTeamStats):
+    defense = averageTeamGame[0:3]
+    return defense
 
 def grab_average_defense(averageTeamStats):
     team2AverageDefense = []
     for game in averageTeamStats:
-        newgame = []
-        for x in range(4,8):
-            newgame.append(game[x])
-        print("new defense game")
-        print(newgame)
-        team2AverageDefense.append(newgame)
+        team2AverageDefense.append(game[4:8])
     return team2AverageDefense
 
+def grab_average_defense_game(averageTeamGame):
+    defense = averageTeamGame[4:8]
+    return defense
 
-def train_average_defense(teamstats,teamscores):
+def create_offense_feature_data(regularTeamStats,averageTeamStats, allTeamAverages):
+    featureSet = []
+    averageOffense = grab_average_offense(averageTeamStats)
+    flatRegular = footballdata.flatten_array(regularTeamStats)
+    i = 0
+    for game in averageTeamStats:
+        teamNumber = int(flatRegular[i][1])
+        dstats = grab_average_defense_game(allTeamAverages[teamNumber][i])
+        featureData = [a - b for a, b in zip(averageOffense[i],dstats)]
+        featureSet.append(featureData)
+        i += 1
+    #remove first 16 games
+    featureSet = featureSet[16:len(featureSet)]
+    print("feature set")
+    print(featureSet)
+    return featureSet
+
+def predict_offense_firstdowns(featureSet,teamStats):
+    print("blah")
+
+def predict_offense_passyards(featureSet,teamStats):
+    print("blah")
+
+def predict_offense_rushyards(featureSet,teamStats):
+    print("blah")
+
+def predict_offense_rushyards(featureSet,teamStats):
+    print("blah")  
+
+
+def create_defense_feature_data(regularTeamStats,averageTeamStats,allTeamAverages):
     print("yikes")
 
 
@@ -729,3 +756,6 @@ print("average newengland stats")
 print(newenglandAverage)
 print("average NE scores")
 print(newenglandAverageScores)
+
+print("create offense train data")
+create_offense_feature_data(newenglandAverageStats,newenglandAverage,teamsAverages)
