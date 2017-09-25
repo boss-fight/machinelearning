@@ -76,8 +76,8 @@ def grab_average_offense(averageTeamStats):
         team1AverageOffense.append(game[0:4])
     return team1AverageOffense
 
-def grab_average_offense_game(averageTeamStats):
-    defense = averageTeamGame[0:3]
+def grab_average_offense_game(averageTeamGame):
+    defense = averageTeamGame[0:4]
     return defense
 
 def grab_average_defense(averageTeamStats):
@@ -102,22 +102,52 @@ def create_offense_feature_data(regularTeamStats,averageTeamStats, allTeamAverag
         featureSet.append(featureData)
         i += 1
     #remove first 16 games
-    featureSet = featureSet[16:len(featureSet)]
-    print("feature set")
-    print(featureSet)
+    featureSet = featureSet[32:len(featureSet)]
     return featureSet
 
 def predict_offense_firstdowns(featureSet,teamStats):
-    print("blah")
+    flatStats = footballdata.flatten_array(teamStats)
+    actualFirstdowns = []
+    i = 0
+    for game in featureSet:
+        actualFirstdowns.append(flatStats[i][4])
+        i += 1
+    svr = SVR(kernel='linear', C=1e3)
+    svr.fit(featureSet,actualFirstdowns)
+    return svr
 
 def predict_offense_passyards(featureSet,teamStats):
-    print("blah")
+    flatStats = footballdata.flatten_array(teamStats)
+    actualyards = []
+    i = 0
+    for game in featureSet:
+        actualyards.append(flatStats[i][5])
+        i += 1
+    svr = SVR(kernel='linear', C=1e3)
+    svr.fit(featureSet,actualyards)
+    return svr
 
 def predict_offense_rushyards(featureSet,teamStats):
-    print("blah")
+    flatStats = footballdata.flatten_array(teamStats)
+    actualyards = []
+    i = 0
+    for game in featureSet:
+        actualyards.append(flatStats[i][6])
+        i += 1
+    svr = SVR(kernel='linear', C=1e3)
+    svr.fit(featureSet,actualyards)
+    return svr
 
-def predict_offense_rushyards(featureSet,teamStats):
-    print("blah")  
+def predict_offense_turnovers(featureSet,teamStats):
+    flatStats = footballdata.flatten_array(teamStats)
+    actualyards = []
+    i = 0
+    for game in featureSet:
+        actualyards.append(flatStats[i][7])
+        i += 1
+    svr = SVR(kernel='linear', C=1e3)
+    svr.fit(featureSet,actualyards)
+    return svr
 
 
 def create_defense_feature_data(regularTeamStats,averageTeamStats,allTeamAverages):
@@ -757,5 +787,63 @@ print(newenglandAverage)
 print("average NE scores")
 print(newenglandAverageScores)
 
-print("create offense train data")
-create_offense_feature_data(newenglandAverageStats,newenglandAverage,teamsAverages)
+print("create offense feature data")
+newenglandFeatureset = create_offense_feature_data(newenglandAverageStats,newenglandAverage,teamsAverages)
+
+print("new england train data")
+newenglandtraindata =  newengland2014stats + newengland2015stats
+print(newenglandtraindata)
+
+svr_firstdowns = predict_offense_firstdowns(newenglandFeatureset,newenglandtraindata)
+svr_passyards = predict_offense_passyards(newenglandFeatureset,newenglandtraindata)
+svr_rushyards = predict_offense_rushyards(newenglandFeatureset,newenglandtraindata)
+svr_turnovers = predict_offense_turnovers(newenglandFeatureset,newenglandtraindata)
+
+
+#setup the 2016 game to predict
+newenglandgame = newenglandAverage[63][0:4]
+arizonagame = arizonaAverage[63][4:8]
+
+game = [a - b for a, b in zip(newenglandgame,arizonagame)]
+game = np.reshape(game,(1,-1))
+
+predictedgame = []
+
+print("predict first downs")
+predictedgame.append(svr_firstdowns.predict(game))
+print(predictedgame[0])
+print("actual first downs")
+print(newengland2016stats[0][0][4])
+
+print("predict pass yards")
+predictedgame.append(svr_passyards.predict(game))
+print(predictedgame[1])
+print("actual pass yards")
+print(newengland2016stats[0][0][5])
+
+print("predict rush yards")
+predictedgame.append(svr_rushyards.predict(game))
+print(predictedgame[2])
+print("actual rush yards")
+print(newengland2016stats[0][0][6])
+
+print("predict turnovers")
+predictedgame.append(svr_turnovers.predict(game))
+print(predictedgame[3])
+print("actual turnovers")
+print(newengland2016stats[0][0][7])
+
+
+#predict score with just offense stats
+offenseaverage = []
+flatnewenglandAverageStats = footballdata.flatten_array(newenglandAverageStats)
+for game in flatnewenglandAverageStats:
+    offenseaverage.append(game[4:8])
+
+svrscore = SVR(kernel='linear', C=1e3)
+svrscore.fit(offenseaverage,newenglandAverageScores)
+predictedgame = np.reshape(predictedgame,(1,-1))
+print("predict score")
+print(svrscore.predict(predictedgame))
+print("actual score")
+print(newengland2016scores[0][0])
