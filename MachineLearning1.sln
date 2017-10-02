@@ -5,6 +5,11 @@ VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "MachineLearning1", "MachineLearning1\MachineLearning1.pyproj", "{389BA464-712F-4E56-84CF-00CB4C916331}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A7CB00E7-9528-44D6-931E-FA13C3AB461D}"
+	ProjectSection(SolutionItems) = preProject
+		MachineLearning1\footballdata.py = MachineLearning1\footballdata.py
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
