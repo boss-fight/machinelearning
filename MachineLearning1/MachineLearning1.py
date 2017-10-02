@@ -11,11 +11,6 @@ from footballdata import footballdata
 
 #CSV files -> https://www.pro-football-reference.com/
 
-#Panda Data gather
-#pd.set_option('display.max_rows',500)
-#pd.set_option('display.max_columns', 50)
-#pd.set_option('display.width', 1000)
-
 gameHeaders = ["team score", "opp score", "O1stD", "OTotYd", "OPassY", "ORushY", "TO",
               "D1stD", "DTotYd", "DPassY", "DRushY", "DTO","Expected Offense Points",
               "Expected Defense Points", "Expected Special Points"]

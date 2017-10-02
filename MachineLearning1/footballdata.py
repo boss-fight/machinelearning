@@ -4,7 +4,6 @@ import numpy as np
 import pandas as pd
 
 class footballdata():
-    """description of class"""
     #pull data from stats folder method
 
 
